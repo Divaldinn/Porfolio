@@ -1,6 +1,7 @@
 <template>
   <div class="app-shell">
     <Preloader @complete="onPreloaderComplete" />
+    <SpeedInsights />
     <SeasonEffects />
     <nav class="navbar">
       <router-link to="/" class="logo-link">
@@ -41,7 +42,7 @@
 
     <!-- Global Footer -->
     <footer class="app-footer">
-        <p>Created by Héctor Salazar | Endfield Protocols Active</p>
+        <p>Created by Héctor Salazar</p>
     </footer>
   </div>
 </template>
@@ -57,6 +58,8 @@ const { locale } = useI18n()
 
 // Mobile Menu Logic
 import { ref, provide } from 'vue'; // Import provide
+import { SpeedInsights } from "@vercel/speed-insights/vue" // Vercel Speed Insights
+
 const isMenuOpen = ref(false);
 const isAppReady = ref(false); // Global Ready State
 
