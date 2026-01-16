@@ -106,13 +106,7 @@
             <span class="edu-badge">{{ $t('edu_status') }}</span>
             <p class="school">Technological University of Mexico (UNITEC)</p>
             <div class="edu-body">
-                <h4>{{ $t('edu_courses_title') }}</h4>
-                <ul class="course-list">
-                    <li><i class="fas fa-check"></i> {{ $t('course_1') }}</li>
-                    <li><i class="fas fa-check"></i> {{ $t('course_2') }}</li>
-                    <li><i class="fas fa-check"></i> {{ $t('course_3') }}</li>
-                    <li><i class="fas fa-check"></i> {{ $t('course_4') }}</li>
-                </ul>
+                <!-- Courses removed by request -->
                 <div class="edu-footer">
                     <p class="next-steps"><strong>{{ $t('edu_next') }}</strong> {{ $t('edu_next_desc') }}</p>
                 </div>
