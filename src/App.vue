@@ -64,11 +64,39 @@ import { SpeedInsights } from "@vercel/speed-insights/vue" // Vercel Speed Insig
 
 const isMenuOpen = ref(false);
 const isAppReady = ref(false); // Global Ready State
+const visitCount = ref("---"); // Global Visit Count
 
-provide('isAppReady', isAppReady); // Make available to all views
+provide('isAppReady', isAppReady); 
+provide('visitCount', visitCount); // Share with StatsView
+
+// Visit Counting Logic (Session Based)
+const initVisits = async () => {
+    try {
+        const hasVisited = sessionStorage.getItem('session_active');
+        let url = '/api/visit';
+        
+        if (hasVisited) {
+            // Already visited this session, just read data
+            url += '?action=get';
+        } else {
+            // New session, increment (default)
+            sessionStorage.setItem('session_active', 'true');
+        }
+
+        const res = await fetch(url);
+        if (res.ok) {
+            const data = await res.json();
+            visitCount.value = data.value.toLocaleString();
+        }
+    } catch (e) {
+        console.warn("Analytics Error:", e);
+        visitCount.value = "OFFLINE";
+    }
+};
 
 const onPreloaderComplete = () => {
     isAppReady.value = true;
+    initVisits(); // triggers after visual load
 };
 
 const toggleMenu = () => {
