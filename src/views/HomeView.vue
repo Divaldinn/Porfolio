@@ -276,8 +276,8 @@ li::before {
 .skills-grid, .automation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
+    gap: 30px; /* Increased from 20px */
+    margin-bottom: 60px; /* Increased form 40px */
 }
 
 /* Section Title Scrambles */
@@ -369,7 +369,8 @@ input:focus, textarea:focus {
         /* Center content on mobile */
         justify-content: center;
         text-align: center;
-        padding-top: 100px; /* More space for fixed nav */
+        padding-top: 120px; /* More breathing room top */
+        padding-bottom: 60px; /* More breathing room bottom */
     }
     /* Override typing alignment for center */
     .typing-container {
