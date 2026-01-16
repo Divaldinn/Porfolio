@@ -1,0 +1,22 @@
+/* Global resets handled in App.vue or specific components */
+/* Keeping this file to import Tailwind or other globals if needed later, but for now clear Vite defaults */
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+body {
+    margin: 0;
+    padding: 0;
+    /* Remove default Vite flex centering */
+    display: block; 
+    min-width: 100%;
+    min-height: 100vh;
+}
+#app {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
