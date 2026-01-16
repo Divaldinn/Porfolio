@@ -25,6 +25,17 @@ const router = createRouter({
       path: '/stats',
       name: 'stats',
       component: StatsView
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: to => {
+        // If looking for a PDF/Image that is missing, go to Home but log warning
+        if (to.path.includes('.pdf')) {
+          console.warn("Missing PDF:", to.path);
+          return '/';
+        }
+        return '/';
+      }
     }
   ],
   scrollBehavior(to, from, savedPosition) {
