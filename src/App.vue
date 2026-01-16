@@ -50,9 +50,11 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import SeasonEffects from './components/SeasonEffects.vue'
-import Preloader from './components/Preloader.vue'
-import PlexusBackground from './components/PlexusBackground.vue'
+import { defineAsyncComponent } from 'vue'
+
+const SeasonEffects = defineAsyncComponent(() => import('./components/SeasonEffects.vue'))
+const Preloader = defineAsyncComponent(() => import('./components/Preloader.vue'))
+const PlexusBackground = defineAsyncComponent(() => import('./components/PlexusBackground.vue'))
 
 const { locale } = useI18n()
 
