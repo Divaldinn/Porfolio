@@ -23,13 +23,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, inject } from 'vue';
 import Chart from 'chart.js/auto';
 
 const timeSpent = ref(0);
 let interval = null;
 let chartInstance = null;
-const visits = ref("Loading...");
+const visits = inject('visitCount'); // Use global count
 
 onMounted(async () => {
     // 1. Time Tracker
@@ -38,27 +38,7 @@ onMounted(async () => {
         timeSpent.value = Math.floor((Date.now() - startTime) / 1000);
     }, 1000);
     
-    // 2. Real Global Visits (Vercel KV)
-    try {
-        const res = await fetch('/api/visit');
-        if (res.ok) {
-            const data = await res.json();
-            visits.value = data.value.toLocaleString();
-        } else {
-            throw new Error('KV API Failed');
-        }
-    } catch (e) {
-        console.warn("KV Access Error (Running Simulation Fallback):", e);
-        
-        // --- FALLBACK SIMULATION (If DB not connected) ---
-        const baseCount = 14205; 
-        let localHits = parseInt(localStorage.getItem('sys_visits')) || 0;
-        localHits++;
-        localStorage.setItem('sys_visits', localHits);
-        
-        const finalValue = baseCount + localHits;
-        visits.value = finalValue.toLocaleString();
-    }
+    // 2. Visits are handled globally in App.vue to prevent duplicates
 
     // 3. Chart.js Setup
     const ctx = document.getElementById('traffic-chart');
