@@ -120,23 +120,17 @@ onMounted(() => {
     font-family: var(--font-header);
     font-weight: 900;
     font-size: 80px;
-    fill: #fff; /* Solid White */
-    stroke: none;
-    opacity: 0;
-    animation: glitchReveal 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 0.5s;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawStroke 2.5s ease-in-out forwards;
 }
 
-@keyframes glitchReveal {
-    0% { opacity: 0; transform: scale(0.9); }
-    20% { opacity: 1; transform: scale(1.1); }
-    40% { opacity: 0; transform: scale(0.95); }
-    60% { opacity: 1; transform: scale(1.02); }
-    80% { opacity: 0.5; transform: scale(0.98); }
-    100% { opacity: 1; transform: scale(1); }
+@keyframes drawStroke {
+    to { stroke-dashoffset: 0; }
 }
-
-/* Removed old stroke animation @keyframes drawStroke */
 
 .data-block {
     font-family: 'Courier Prime', monospace;
