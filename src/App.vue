@@ -240,22 +240,23 @@ body {
     }
     .mobile-toggle {
         display: flex; /* Show toggle */
+        z-index: 301; /* Must be above the menu overlay */
     }
     
-    /* Drawer Menu */
+    /* Drawer Menu (Full Screen Mobile) */
     .nav-links {
         position: fixed;
         top: 0; right: -100%; /* Hidden by default */
-        width: 70%;
+        width: 100%; /* Full Width */
         height: 100vh;
-        background: rgba(18, 18, 18, 0.98);
-        border-left: 2px solid var(--color-accent);
+        background: #121212; /* Solid Matte Black */
+        /* border-left: 2px solid var(--color-accent); Removed left border */
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        z-index: 150;
-        gap: 30px;
+        z-index: 300; /* Above Logo (200) and Navbar (100) */
+        gap: 40px; /* Increased gap */
     }
     .nav-links.mobile-open {
         right: 0; /* Slide in */
