@@ -59,5 +59,7 @@ watch(() => props.text, () => {
 .scramble-text {
     font-family: 'Courier Prime', monospace; /* Tech feel */
     display: inline-block;
+    line-height: 1.2; /* Prevent vertical jitter */
+    white-space: pre-wrap; /* Preserve spaces but allow wrap if needed */
 }
 </style>

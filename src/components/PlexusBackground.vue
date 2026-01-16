@@ -14,7 +14,8 @@ let animationFrameId = null;
 let particles = [];
 
 // Configuration
-const particleCount = 60; // Adjust density
+// Configuration
+const particleCount = window.innerWidth < 768 ? 25 : 60; // Mobile Optimization (25 vs 60)
 const connectionDistance = 150;
 const moveSpeed = 0.5;
 

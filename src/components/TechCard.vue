@@ -116,6 +116,13 @@ const runSequence = () => {
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+@media (max-width: 768px) {
+    .tech-card {
+        padding: 15px; /* Reduced from 20px */
+        min-height: auto; /* Allow auto height on mobile to prevent huge empty boxes */
+    }
+}
+
 /* Stage 1: Hardware On (Expand + Flicker) */
 .tech-card.stage-1, .tech-card.stage-2, .tech-card.stage-3, .tech-card.stage-4 {
     transform: scaleY(1);

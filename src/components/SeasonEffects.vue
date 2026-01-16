@@ -2,7 +2,7 @@
   <div class="season-overlay">
     <!-- Christmas Snow -->
     <div v-if="currentSeason === 'christmas'" class="snow-container">
-        <div class="snowflake" v-for="n in 50" :key="n"></div>
+        <div class="snowflake" v-for="n in flakeCount" :key="n"></div>
     </div>
 
     <!-- Halloween Fog/Webs -->
@@ -44,6 +44,8 @@ onMounted(() => {
     // Debug: Uncomment to test
     // currentSeason.value = 'christmas'; 
 });
+
+const flakeCount = window.innerWidth < 768 ? 20 : 50;
 </script>
 
 <style scoped>
