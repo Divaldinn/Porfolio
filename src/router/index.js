@@ -49,4 +49,13 @@ const router = createRouter({
   }
 })
 
+// Google Analytics Tracking Hook
+router.afterEach((to) => {
+  if (window.gtag) {
+    window.gtag('config', 'G-MY7RGJHVLL', {
+      page_path: to.path
+    });
+  }
+})
+
 export default router
