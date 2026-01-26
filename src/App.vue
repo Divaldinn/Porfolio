@@ -94,9 +94,16 @@ const initVisits = async () => {
     }
 };
 
+import AOS from 'aos';
+
 const onPreloaderComplete = () => {
     isAppReady.value = true;
     initVisits(); // triggers after visual load
+    
+    // Refresh Animations to ensure visibility
+    setTimeout(() => {
+        AOS.refresh();
+    }, 100);
 };
 
 const toggleMenu = () => {
@@ -109,8 +116,6 @@ const closeMenu = () => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
-
 /* Arknights / Rhodes Island Variables */
 :root {
   --color-bg: #121212;         /* Matte Black */
