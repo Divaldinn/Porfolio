@@ -109,6 +109,8 @@ const closeMenu = () => {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
 /* Arknights / Rhodes Island Variables */
 :root {
   --color-bg: #121212;         /* Matte Black */
@@ -122,8 +124,6 @@ const closeMenu = () => {
   --font-body: 'Roboto Condensed', sans-serif;
   --skew-angle: -15deg;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 body {
   margin: 0;
