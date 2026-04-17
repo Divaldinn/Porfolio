@@ -167,29 +167,23 @@ const form = reactive({
 
 const formStatus = ref('idle');
 
-const sendEmail = async () => {
+const sendEmail = () => {
     formStatus.value = 'sending';
     try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name: form.name,
-                subject: form.subject,
-                body: form.body
-            })
-        });
-
-        if (response.ok) {
-            formStatus.value = 'success';
-            form.name = '';
-            form.subject = '';
-            form.body = '';
-            setTimeout(() => { formStatus.value = 'idle'; }, 3000);
-        } else {
-            formStatus.value = 'error';
-            setTimeout(() => { formStatus.value = 'idle'; }, 3000);
-        }
+        // Since Vercel KV Database is offline, we use a robust native mailto redirection
+        const myEmail = "hectore.salazar83@gmail.com";
+        const subject = encodeURIComponent(form.subject || "Contacto Portafolio");
+        const body = encodeURIComponent(
+            `Nombre: ${form.name}\n\nMensaje:\n${form.body}`
+        );
+        
+        window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+        
+        formStatus.value = 'success';
+        form.name = '';
+        form.subject = '';
+        form.body = '';
+        setTimeout(() => { formStatus.value = 'idle'; }, 3000);
     } catch (e) {
         formStatus.value = 'error';
         setTimeout(() => { formStatus.value = 'idle'; }, 3000);

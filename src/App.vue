@@ -370,6 +370,13 @@ body {
         font-size: 0.7rem; 
         padding-bottom: 20px;
     }
+    
+    /* AOS Disable Fallback: force visibility since JS is disabled on mobile */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 .lang-switcher {
