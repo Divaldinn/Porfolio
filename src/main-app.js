@@ -6,6 +6,10 @@ import App from './App.vue'
 import router from './router'
 import './style.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import { inject as injectVercelAnalytics } from '@vercel/analytics'
+
+// Inject Vercel Analytics tracking script
+injectVercelAnalytics()
 
 // Import locales
 import en from './locales/en.json'
