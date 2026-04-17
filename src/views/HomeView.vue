@@ -211,6 +211,9 @@ const sendEmail = async () => {
   align-items: center;
   justify-content: flex-start;
 }
+.typing-container {
+  min-height: 60px; /* Reservation for h1 to avoid CLS */
+}
 .cyber-btn:hover::before {
     left: 150%;
 }
@@ -412,6 +415,7 @@ input:focus, textarea:focus {
     /* Override typing alignment for center */
     .typing-container {
         margin: 0 auto;
+        min-height: 40px; /* Reserve space to prevent CLS shift on mount */
     }
     .subtitle {
         font-size: 1.5rem;

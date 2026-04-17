@@ -147,8 +147,8 @@ const closeMenu = () => {
   --color-text-dim: #A0A0A0;   /* Technical Grey */
   --color-accent: #FFE600;     /* Warning Yellow */
   --color-secondary: #00C9FF;  /* System Cyan */
-  --font-header: 'Oswald', sans-serif;
-  --font-body: 'Roboto Condensed', sans-serif;
+  --font-header: 'Oswald', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Roboto Condensed', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --skew-angle: -15deg;
 }
 

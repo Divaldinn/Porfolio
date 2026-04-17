@@ -38,7 +38,8 @@ AOS.init({
     duration: 800,
     easing: 'ease-in-out',
     once: true,
-    mirror: false
+    mirror: false,
+    disable: 'mobile' // Boosts INP on low-end devices by preventing heavy scroll calculations
 })
 
 app.mount('#app')
