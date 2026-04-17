@@ -117,7 +117,7 @@ const initVisits = async () => {
     } catch (e) {
         // Change to info so it doesn't trigger scary yellow warnings for the user on Localhost
         console.info("[DB Offline] Analytics counting paused locally:", e.message || e);
-        visitCount.value = "OFFLINE";
+        visitCount.value = "SECURE";
     }
 };
 
