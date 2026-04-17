@@ -1,6 +1,7 @@
 <template>
   <div class="app-shell">
     <Preloader @complete="onPreloaderComplete" />
+    <Analytics />
     <SpeedInsights />
     
     <!-- Dynamic Interactive Background -->
@@ -52,6 +53,7 @@
 import { RouterView, RouterLink } from 'vue-router'
 import { ref, computed, watch, provide, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Analytics } from '@vercel/analytics/vue'
 import { SpeedInsights } from "@vercel/speed-insights/vue"
 import Preloader from './components/Preloader.vue'
 import PlexusBackground from './components/PlexusBackground.vue'
