@@ -123,22 +123,11 @@ const runSequence = () => {
     }
 }
 
-/* Stage 1: Hardware On (Expand + Flicker) */
+/* Stage 1: Hardware On (Expand) */
 .tech-card.stage-1, .tech-card.stage-2, .tech-card.stage-3, .tech-card.stage-4 {
     transform: scaleY(1);
-    animation: hardware-flicker 0.4s steps(5, end) forwards;
+    opacity: 1;
 }
-
-@keyframes hardware-flicker {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    40% { opacity: 0; }
-    60% { opacity: 0.5; }
-    80% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Stage 2: Signal Flash (Border Bloom) */
 .tech-card.stage-2 .wireframe-border {
     border-color: #fff;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);

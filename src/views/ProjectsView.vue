@@ -1,7 +1,7 @@
 <template>
   <div class="projects-page">
     <h2 class="page-title" data-aos="fade-down">
-        <span class="number">03.</span> <ScrambleText :text="$t('projects_title')" :duration="1500" />
+        {{ $t('projects_title') }}
     </h2>
     
     <div class="projects-grid">
@@ -22,7 +22,7 @@
             
             <div class="tech-stack">
                 <span v-for="tag in project.tags" :key="tag">
-                    <ScrambleText :text="tag" :duration="500" />
+                    {{ tag }}
                 </span>
             </div>
             

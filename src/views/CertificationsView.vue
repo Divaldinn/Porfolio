@@ -1,7 +1,7 @@
 <template>
   <div class="certifications-page">
     <h2 class="page-title" data-aos="fade-down">
-        <span class="number">04.</span> {{ $t('cert_title') }}
+        {{ $t('cert_title') }}
     </h2>
     
     <div class="certifications-grid">

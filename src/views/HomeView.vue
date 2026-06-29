@@ -43,7 +43,7 @@
 
     <section id="skills" class="section" data-aos="fade-up">
         <h2 class="section-title">
-            <span class="number">02.</span> <ScrambleText :text="$t('skills_title')" />
+            <ScrambleText :text="$t('skills_title')" />
         </h2>
         <div class="skills-grid">
             <TechCard :title="$t('skill_cat_lang')" :delay="0">
@@ -81,7 +81,7 @@
 
     <section id="automation" class="section" data-aos="fade-up">
         <h2 class="section-title">
-            <span class="number">03.</span> <ScrambleText text="Automatización & Scripting" />
+            <ScrambleText text="Automatización & Scripting" />
         </h2>
         <div class="automation-grid">
             <TechCard title="Excel & Macros" :delay="100">
@@ -99,23 +99,9 @@
         </div>
     </section>
 
-    <section id="education" class="section" data-aos="fade-up">
-        <h2 class="section-title">
-            <span class="number">04.</span> <ScrambleText :text="$t('edu_title')" />
-        </h2>
-        <TechCard :title="$t('edu_degree')" class="edu-tech-card">
-            <span class="edu-badge">{{ $t('edu_status') }}</span>
-            <p class="school">Technological University of Mexico (UNITEC)</p>
-            <div class="edu-body">
-                <!-- Courses removed by request -->
-                <div class="edu-footer">
-                    <p class="next-steps"><strong>{{ $t('edu_next') }}</strong> {{ $t('edu_next_desc') }}</p>
-                </div>
-            </div>
-        </TechCard>
     <section id="contact" class="section" data-aos="fade-up">
         <h2 class="section-title">
-            <span class="number">05.</span> <ScrambleText :text="$t('contact_next')" />
+            <ScrambleText :text="$t('contact_next')" />
         </h2>
         <h1 class="contact-title">{{ $t('contact_title') }}</h1>
         <p class="contact-desc">{{ $t('contact_desc') }}</p>
@@ -330,6 +316,12 @@ ul li::before {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px; /* Increased from 20px */
     margin-bottom: 60px; /* Increased form 40px */
+}
+
+/* Section Styles */
+.section {
+    padding-top: 100px; /* Separación entre secciones */
+    padding-bottom: 20px;
 }
 
 /* Section Title Scrambles */
