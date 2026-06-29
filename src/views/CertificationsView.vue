@@ -5,7 +5,7 @@
     </h2>
     
     <div class="certifications-grid">
-        <TechCard v-for="(cert, index) in certifications" :key="index" :title="cert.title" :delay="index * 100" class="cert-card interactive-card">
+        <TechCard v-for="(cert, index) in certifications" :key="index" :title="cert.title" :enableScramble="false" :delay="0" class="cert-card interactive-card">
              <template #header><i :class="cert.icon"></i></template>
              <div class="cert-body">
                  <p class="cert-issuer">{{ $t(cert.issuer) }}</p>
