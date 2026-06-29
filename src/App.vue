@@ -22,7 +22,7 @@
       <div class="nav-links" :class="{ 'mobile-open': isMenuOpen }">
         <router-link to="/" @click="closeMenu">{{ $t('nav_about') }}</router-link>
         <router-link to="/projects" @click="closeMenu">{{ $t('nav_projects') }}</router-link>
-        <a href="/#certifications" @click="closeMenu">{{ $t('cert_title') }}</a>
+        <router-link to="/certifications" @click="closeMenu">{{ $t('cert_title') }}</router-link>
         <router-link to="/stats" @click="closeMenu">DB Stats</router-link>
         <select v-model="$i18n.locale" class="lang-switcher">
             <option value="en">EN</option>
